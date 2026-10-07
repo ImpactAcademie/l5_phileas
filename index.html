@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111020">
+  <title>Questboard — Mes missions</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Questboard, accueil">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>QUEST<span class="brand-light">BOARD</span></span>
+      </a>
+      <div class="player-tag"><span class="online-dot"></span><span>MODE FOCUS</span><span class="tag-divider">/</span><span class="level">LVL 01</span></div>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> TON ESPACE DE JEU</p>
+        <h1 id="page-title">Chaque jour,<br><span>une nouvelle quête.</span></h1>
+        <p class="hero-note">Organise tes missions. Gagne de l’XP. Passe au niveau supérieur.</p>
+      </div>
+      <div class="hero-emblem" aria-hidden="true">
+        <div class="emblem-ring"><span>✦</span></div>
+        <span class="emblem-spark spark-a">✧</span><span class="emblem-spark spark-b">✦</span>
+      </div>
+    </section>
+
+    <section class="dashboard" aria-label="Tableau de bord des missions">
+      <div class="stat-card stat-total"><span class="stat-icon">◈</span><div><strong id="total-count">0</strong><span>MISSIONS</span></div></div>
+      <div class="stat-card stat-done"><span class="stat-icon">✓</span><div><strong id="done-count">0</strong><span>TERMINÉES</span></div></div>
+      <div class="xp-card"><div class="xp-heading"><span>PROGRESSION</span><span id="progress-label">0% XP</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="progress-caption">Une mission à la fois, tu peux le faire !</p></div>
+    </section>
+
+    <div class="workspace-grid">
+    <section class="quest-panel" aria-labelledby="quest-title">
+      <div class="panel-heading">
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> JOURNAL DE QUÊTES</p><h2 id="quest-title">Mes missions <span class="heading-star">✦</span></h2></div>
+        <span class="date-chip" id="today-date"></span>
+      </div>
+
+      <form class="add-form" id="add-form">
+        <label class="sr-only" for="task-input">Nouvelle mission</label>
+        <span class="input-icon" aria-hidden="true">＋</span>
+        <input id="task-input" type="text" maxlength="100" placeholder="Ajouter une mission à ton journal..." autocomplete="off" required>
+        <button class="add-button" type="submit"><span>＋</span> AJOUTER</button>
+      </form>
+
+      <div class="list-toolbar">
+        <div class="filters" role="group" aria-label="Filtrer les missions">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">TOUTES <span id="all-filter-count">0</span></button>
+          <button class="filter-button" type="button" data-filter="active" aria-pressed="false">À FAIRE</button>
+          <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">TERMINÉES</button>
+        </div>
+        <button class="clear-button" id="clear-completed" type="button">EFFACER LES TERMINÉES</button>
+      </div>
+
+      <p class="api-status is-hidden" id="api-status" role="alert" aria-live="polite"></p>
+      <ul class="task-list" id="task-list" aria-live="polite"></ul>
+      <div class="empty-state" id="empty-state">
+        <span class="empty-icon" aria-hidden="true">✧</span>
+        <strong id="empty-title">Ton journal est vide</strong>
+        <p>Ajoute une mission et lance ta première quête.</p>
+      </div>
+      <footer class="panel-footer"><span><span class="footer-pulse"></span> SYNCHRONISÉ AVEC LE SERVEUR</span><span>FAIS DE CHAQUE JOUR UNE VICTOIRE <b>✦</b></span></footer>
+    </section>
+    <aside class="motivation-card" aria-labelledby="motivation-title">
+      <div class="motivation-topline"><span class="tiktok-note" aria-hidden="true">♪</span><span>PAUSE MOTIVATION</span></div>
+      <div class="motivation-art" aria-hidden="true"><span class="art-star star-left">✦</span><span class="play-button">▶</span><span class="art-star star-right">✧</span></div>
+      <p class="motivation-kicker">PETIT BOOST</p>
+      <h2 id="motivation-title">Tu avances<br>à ton rythme.</h2>
+      <p class="motivation-copy">Une tâche après l’autre. Tu es déjà en train d’y arriver !</p>
+      <a class="tiktok-link" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+        <span>♪</span> OUVRIR TIKTOK <span class="external-arrow" aria-hidden="true">↗</span>
+      </a>
+      <p class="motivation-footnote">Fais une petite pause, puis reviens à ta quête ✨</p>
+    </aside>
+    </div>
+    <p class="page-footer">CONÇU POUR TES GRANDES QUÊTES <span>✦</span></p>
+  </main>
+</body>
+</html>
